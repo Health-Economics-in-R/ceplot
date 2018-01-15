@@ -1,0 +1,44 @@
+---
+title: "plotCostEffectiveness"
+author: "Nathan Green"
+date: "`r Sys.Date()`"
+output: md_document
+---
+
+```{r set-options, echo=FALSE, cache=FALSE}
+options(width = 1000)
+```
+
+
+# `plotCostEffectiveness`
+
+An R package for plotting cost-effectiveness analysis output data.
+
+Currently contains functions to:
+
+* tornado plots
+* cost-effectiveness planes
+
+_TODO_
+
+- [ ] profile plots
+
+
+
+
+## Installing `plotCostEffectiveness`
+
+To install the development version from github:
+```{r eval=FALSE}
+library(devtools)
+install_github("n8thangreen/plotCostEffectiveness")
+```
+
+Then, to load the package, use:
+```{r eval=FALSE}
+library("plotCostEffectiveness")
+```
+
+See package [Vignette]() for more details and examples.
+
+
