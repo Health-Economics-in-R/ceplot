@@ -41,6 +41,3 @@ plot
 Cost-effectiveness plane plot.
 Borrowed ideas from the \code{BCEA} package.
 }
-\seealso{
-\link{\code{IDEAdectree.simple}}
-}

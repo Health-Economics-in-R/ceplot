@@ -18,6 +18,8 @@ Data frame of class tornado
 A preprocessing step is required to use \code{ggplot_tornado}.
 }
 \details{
+This can be thougth of as going from a multi-way design to a one-way design.
+
 The output data from a multivariate sensitivity analysis are usually in the form
 of a grid of input parameter values and a column of associated output values.
 

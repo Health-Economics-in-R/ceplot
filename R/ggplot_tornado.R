@@ -6,7 +6,15 @@
 #' statistic of interest e.g. ICER or INMB.
 #' These need to be calculated before hand and in correct format (see \code{s_analysis_to_tornado_plot_data}).
 #'
-#' @param dat Data frame of output maximum and minimum values
+#' @param dat Data frame of output maximum and minimum values. Format should be
+#' \tabular{rrr}{
+#'  val \tab names \tab output\cr
+#' min \tab sens \tab 5\cr
+#' max \tab sens \tab 11\cr
+#' min \tab spec \tab 10\cr
+#' max \tab spec \tab 1
+#' }
+#'
 #' @param baseline_output Values of output for baseline input paramater values to compare maximum and minimum against (default: NA)
 #' @param annotate_scale Scale how much annotation is moved left and right (default: 0)
 #' @param ORDER Autmomatically order the bars by length (default: TRUE)
@@ -102,7 +110,8 @@ ggplot_tornado <- function(dat,
   # shift annotation left or right
   nudge <- (with(datplot, eval(parse(text = output_name)) > baseline) - 0.5) * annotate_scale
 
-  ggplot2::ggplot(datplot, aes(names, ymin = min, ymax = max, colour = val)) +
+  ggplot2::ggplot(datplot,
+                  aes(names, ymin = min, ymax = max, colour = val)) +
     geom_linerange(size = 10) +
     coord_flip() +
     xlab("") +

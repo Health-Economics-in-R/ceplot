@@ -5,7 +5,7 @@
 \title{A Simple Tornado Plot}
 \usage{
 tornado_plot(cf, se, df = NULL, level = 0.95, parm = NULL,
-  labels = TRUE, xlab = "Coefficient confidence intervals", ylab = "",
+  labels = FALSE, xlab = "Coefficient confidence intervals", ylab = "",
   xlim = NULL, ylim = NULL, las = 1, lwd = 1, lty = c(1, 2),
   pch = 19, col = 1, length = 0, angle = 30, code = 3, ...)
 }
@@ -17,9 +17,13 @@ tornado_plot(cf, se, df = NULL, level = 0.95, parm = NULL,
 \item{...}{}
 }
 \description{
+Provide middle value and standard errors.
+Assumes symmetrical.
+}
+\details{
 https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/
 }
 \examples{
-tornado_plot(cf = c(2,3), se = c(1,2))
+tornado_plot(cf = c(a=2, b=3), se = c(1,2), labels = TRUE)
 
 }

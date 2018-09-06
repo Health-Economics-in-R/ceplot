@@ -19,7 +19,6 @@
 #'
 #' @return plot
 #'
-#' @seealso  \link{\code{IDEAdectree.simple}}
 #' @export
 my.plot.bcea <- function(dat1,
                          dat2 = NA,
@@ -160,7 +159,6 @@ my.plot.bcea <- function(dat1,
 
 #' @return plot
 #'
-#' @seealso  \link{\code{IDEAdectree.simple}}
 #' @export
 my.plot.ceac <-
   function(dat1,

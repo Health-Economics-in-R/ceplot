@@ -3,6 +3,8 @@
 #'
 #' A preprocessing step is required to use \code{ggplot_tornado}.
 #'
+#' This can be thougth of as going from a multi-way design to a one-way design.
+#'
 #' The output data from a multivariate sensitivity analysis are usually in the form
 #' of a grid of input parameter values and a column of associated output values.
 #'
@@ -54,8 +56,8 @@ s_analysis_to_tornado_plot_data <- function(s_analysis,
   n.params <- ncol(design_matrix)
 
   # find parameters upper and lower limits
-  MINS <- apply(design_matrix, 2, min)
-  MAXS <- apply(design_matrix, 2, max)
+  MINS <- apply(design_matrix, 2, min, na.rm = TRUE)
+  MAXS <- apply(design_matrix, 2, max, na.rm = TRUE)
 
   # if baseline parameter not provided
   # use an average
@@ -64,7 +66,7 @@ s_analysis_to_tornado_plot_data <- function(s_analysis,
   if (is.na(baseline_input)) {
     baseline_input <- apply(design_matrix, 2, function(x) median(x))
 
-    var_names <- names(s_analysis)[names(s_analysis)%in%names(baseline_input)]  #maintains ordering
+    var_names <- names(s_analysis)[names(s_analysis) %in% names(baseline_input)]  #maintains ordering
 
     baseline_input <-
       baseline_input %>%

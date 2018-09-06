@@ -8,7 +8,14 @@ ggplot_tornado(dat, baseline_output = NA, annotate_scale = 0,
   ORDER = TRUE)
 }
 \arguments{
-\item{dat}{Data frame of output maximum and minimum values}
+\item{dat}{Data frame of output maximum and minimum values. Format should be
+\tabular{rrr}{
+ val \tab names \tab output\cr
+min \tab sens \tab 5\cr
+max \tab sens \tab 11\cr
+min \tab spec \tab 10\cr
+max \tab spec \tab 1
+}}
 
 \item{baseline_output}{Values of output for baseline input paramater values to compare maximum and minimum against (default: NA)}
 

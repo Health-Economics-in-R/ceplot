@@ -3,7 +3,7 @@
 
 An R package for plotting cost-effectiveness analysis output data.
 
-Currently contains functions to:
+Currently contains functions to plot:
 
 -   tornado plots
 -   cost-effectiveness planes
