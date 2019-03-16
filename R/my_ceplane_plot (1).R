@@ -445,20 +445,15 @@ my_ceplane.plot <- function(he,
           jus <- alt.legend
         }
       }
-      ceplane <-
-        ceplane +
-        ggplot2::theme(legend.position = alt.legend,
-                       legend.justification = jus,
-                       legend.title = ggplot2::element_blank(),
-                       legend.background = ggplot2::element_blank()) +
+      ceplane <- ceplane + ggplot2::theme(legend.position = alt.legend,
+                                          legend.justification = jus, legend.title = ggplot2::element_blank(),
+                                          legend.background = ggplot2::element_blank()) +
         ggplot2::theme(text = ggplot2::element_text(size = 11),
                        legend.key.size = grid::unit(0.66, "lines"),
                        legend.spacing = grid::unit(-1.25, "line"),
-                       panel.grid = ggplot2::element_blank(),
-                       legend.key = ggplot2::element_blank(),
-                       legend.text.align = 0) +
-        ggplot2::theme(plot.title = ggplot2::element_text(lineheight = 1.05,
-                                                          face = "bold", size = 14.3, hjust = 0.5)) +
+                       panel.grid = ggplot2::element_blank(), legend.key = ggplot2::element_blank(),
+                       legend.text.align = 0) + ggplot2::theme(plot.title = ggplot2::element_text(lineheight = 1.05,
+                                                                                                  face = "bold", size = 14.3, hjust = 0.5)) +
         opt.theme
       if (he$n.comparisons == 1)
         ceplane <- ceplane + ggplot2::theme(legend.key.size = grid::unit(0.1,

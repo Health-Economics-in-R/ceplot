@@ -1,16 +1,26 @@
 ---
-title: "plotCostEffectiveness"
-author: "Nathan Green"
-date: "`r Sys.Date()`"
-output: md_document
+output:
+  github_document:
+    pandoc_args: --webtex
 ---
 
-```{r set-options, echo=FALSE, cache=FALSE}
-options(width = 1000)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  tidy = FALSE,
+  error = FALSE,
+  fig.width = 5,
+  fig.height = 5
+)
 ```
 
 
-# `plotCostEffectiveness`
+# plotCostEffectiveness <img src="imgfile.png" height="139" align="right"/>
 
 An R package for plotting cost-effectiveness analysis output data.
 
