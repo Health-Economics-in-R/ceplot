@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 ```
 
 
-# plotCostEffectiveness <img src="imgfile.png" height="139" align="right"/>
+# ceplot <img src="imgfile.png" height="139" align="right"/>
 
 An R package for plotting cost-effectiveness analysis output data.
 
@@ -36,17 +36,17 @@ _TODO_
 
 
 
-## Installing `plotCostEffectiveness`
+## Installing ceplot
 
 To install the development version from github:
 ```{r eval=FALSE}
 library(devtools)
-install_github("n8thangreen/plotCostEffectiveness")
+install_github("Health-Economics-in-R/ceplot")
 ```
 
 Then, to load the package, use:
 ```{r eval=FALSE}
-library("plotCostEffectiveness")
+library("ceplot")
 ```
 
 See package [Vignette]() for more details and examples.

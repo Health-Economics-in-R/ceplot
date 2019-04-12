@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# plotCostEffectiveness <img src="imgfile.png" height="139" align="right"/>
+# ceplot <img src="imgfile.png" height="139" align="right"/>
 
 An R package for plotting cost-effectiveness analysis output data.
 
@@ -14,19 +14,19 @@ Currently contains functions to:
 
   - \[ \] profile plots
 
-## Installing `plotCostEffectiveness`
+## Installing ceplot
 
 To install the development version from github:
 
 ``` r
 library(devtools)
-install_github("n8thangreen/plotCostEffectiveness")
+install_github("Health-Economics-in-R/ceplot")
 ```
 
 Then, to load the package, use:
 
 ``` r
-library("plotCostEffectiveness")
+library("ceplot")
 ```
 
 See package [Vignette]() for more details and examples.
