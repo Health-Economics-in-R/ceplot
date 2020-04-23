@@ -154,27 +154,26 @@ my.plot.bcea <- function(dat1,
 #' @param SCALEdays (TRUE)
 #' @param SCALEcosts (TRUE)
 #' @param N Original sample size (number of patients)
-#' @param CI Use Binomial 95% confidence intervals, capture some model uncertainty due to simulation size
+#' @param CI Use Binomial 95\% confidence intervals, capture some model uncertainty due to simulation size
 #'
-
 #' @return plot
 #'
 #' @export
-my.plot.ceac <-
-  function(dat1,
-           dat2,
-           dat3,
-           dat4 = NA,
-           intlabels,
-           wtpNEG = NA,
-           labelLong = TRUE,
-           TITLE = "",
-           SCALEdays = TRUE,
-           SCALEcosts = TRUE,
-           N = 1,
-           CI = FALSE) {
+my.plot.ceac <- function(dat1,
+                         dat2,
+                         dat3,
+                         dat4 = NA,
+                         intlabels,
+                         wtpNEG = NA,
+                         labelLong = TRUE,
+                         TITLE = "",
+                         SCALEdays = TRUE,
+                         SCALEcosts = TRUE,
+                         N = 1,
+                         CI = FALSE) {
 
-    stopifnot(nrow(dat1$e) == nrow(dat2$e), nrow(dat1$e) == nrow(dat3$e))
+    stopifnot(nrow(dat1$e) == nrow(dat2$e),
+              nrow(dat1$e) == nrow(dat3$e))
 
     Nrealisation <- nrow(dat1$e)
 

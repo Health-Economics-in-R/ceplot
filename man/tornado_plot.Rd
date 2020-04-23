@@ -4,10 +4,27 @@
 \alias{tornado_plot}
 \title{A Simple Tornado Plot}
 \usage{
-tornado_plot(cf, se, df = NULL, level = 0.95, parm = NULL,
-  labels = FALSE, xlab = "Coefficient confidence intervals", ylab = "",
-  xlim = NULL, ylim = NULL, las = 1, lwd = 1, lty = c(1, 2),
-  pch = 19, col = 1, length = 0, angle = 30, code = 3, ...)
+tornado_plot(
+  cf,
+  se,
+  df = NULL,
+  level = 0.95,
+  parm = NULL,
+  labels = FALSE,
+  xlab = "Coefficient confidence intervals",
+  ylab = "",
+  xlim = NULL,
+  ylim = NULL,
+  las = 1,
+  lwd = 1,
+  lty = c(1, 2),
+  pch = 19,
+  col = 1,
+  length = 0,
+  angle = 30,
+  code = 3,
+  ...
+)
 }
 \arguments{
 \item{cf}{Central values}
@@ -15,6 +32,9 @@ tornado_plot(cf, se, df = NULL, level = 0.95, parm = NULL,
 \item{se}{Standard errors}
 
 \item{...}{}
+}
+\value{
+
 }
 \description{
 Provide middle value and standard errors.

@@ -10,9 +10,18 @@
 \usage{
 my_contour2(...)
 
-\method{my_contour2}{bcea}(res_bcea, wtp = 20000, xlim = NULL,
-  ylim = NULL, comparison = NULL, withpoints = FALSE, graph = c("base",
-  "ggplot2"), CONTOUR_PC = "5\%", facet = FALSE, ...)
+\method{my_contour2}{bcea}(
+  res_bcea,
+  wtp = 20000,
+  xlim = NULL,
+  ylim = NULL,
+  comparison = NULL,
+  withpoints = FALSE,
+  graph = c("base", "ggplot2"),
+  CONTOUR_PC = "5\%",
+  facet = FALSE,
+  ...
+)
 
 my_contour2_facet(dat, ...)
 }
@@ -22,8 +31,11 @@ my_contour2_facet(dat, ...)
 \item{facet}{(TRUE/FALSE)}
 
 \item{dat}{List of class dectree output}
+}
+\value{
 
-\item{...}{}
+
+
 }
 \description{
 Cost Effectiveness Planes

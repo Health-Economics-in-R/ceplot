@@ -4,8 +4,7 @@
 \alias{ggplot_tornado}
 \title{Tornado Plot}
 \usage{
-ggplot_tornado(dat, baseline_output = NA, annotate_scale = 0,
-  ORDER = TRUE)
+ggplot_tornado(dat, baseline_output = NA, annotate_scale = 0, ORDER = TRUE)
 }
 \arguments{
 \item{dat}{Data frame of output maximum and minimum values. Format should be
@@ -44,7 +43,7 @@ library(ggplot2)
 ## user defined ##
 dat <- data.frame(names = c("Specificity (min:0.8; max:1)",
                            "Sensitivity (min:0.8; max:1)",
-                           "Cost of rule-out test (min:£10; max:£100)",
+                           "Cost of rule-out test (min:Â£10; max:Â£100)",
                            "Prevalence (min:40\%; max:50\%)",
                            "Dosanjh category 3 status (all active TB/all non-TB)",
                            "TB ruled-out non-TB patient 6 week follow-up (min:0\%; max:10\%)"),

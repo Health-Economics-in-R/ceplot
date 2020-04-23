@@ -13,6 +13,9 @@ my_ceac.plot(screen.bcea, new_window = FALSE, scenario = NA)
 
 \item{scenario}{Specific scenario numbers to plot. default: NA}
 }
+\value{
+
+}
 \description{
 The function that comes with the \code{BCEA} package
 is a bit basic and hard to modify.

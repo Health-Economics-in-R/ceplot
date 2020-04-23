@@ -4,9 +4,20 @@
 \alias{my.plot.ceac}
 \title{My Version of the Cost-Effectiveness Acceptability Curve Plot}
 \usage{
-my.plot.ceac(dat1, dat2, dat3, dat4 = NA, intlabels, wtpNEG = NA,
-  labelLong = TRUE, TITLE = "", SCALEdays = TRUE, SCALEcosts = TRUE,
-  N = 1, CI = FALSE)
+my.plot.ceac(
+  dat1,
+  dat2,
+  dat3,
+  dat4 = NA,
+  intlabels,
+  wtpNEG = NA,
+  labelLong = TRUE,
+  TITLE = "",
+  SCALEdays = TRUE,
+  SCALEcosts = TRUE,
+  N = 1,
+  CI = FALSE
+)
 }
 \arguments{
 \item{dat1}{Output from IDEAdectree.simple}
@@ -29,7 +40,7 @@ my.plot.ceac(dat1, dat2, dat3, dat4 = NA, intlabels, wtpNEG = NA,
 
 \item{N}{Original sample size (number of patients)}
 
-\item{CI}{Use Binomial 95% confidence intervals, capture some model uncertainty due to simulation size}
+\item{CI}{Use Binomial 95\% confidence intervals, capture some model uncertainty due to simulation size}
 }
 \value{
 plot
