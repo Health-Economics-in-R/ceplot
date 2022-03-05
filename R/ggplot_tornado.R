@@ -1,10 +1,22 @@
 
+#
+ggplot_tornado <- function(dat, ...) {
+  UseMethod("ggplot_tornado", dat)
+}
+
+#
+ggplot_tornado.default <- function(dat, ...) {
+  stop("Input data must be tornado class data frame.")
+}
+
+
+
 #' Tornado Plot
 #'
 #' Create a tornado plot for a cost-effectiveness one-way sensitivity analysis.
 #' Supply the parameter names and maximum and minimum values for an output
 #' statistic of interest e.g. ICER or INMB.
-#' These need to be calculated before hand and in correct format (see \code{s_analysis_to_tornado_plot_data}).
+#' These need to be calculated before hand and in correct format (see \code{create_tornado_data}).
 #'
 #' @param dat Data frame of output maximum and minimum values. Format should be
 #' \tabular{rrr}{
@@ -16,13 +28,13 @@
 #' }
 #'
 #' @param baseline_output Values of output for baseline input paramater values to compare maximum and minimum against (default: NA)
-#' @param annotate_scale Scale how much annotation is moved left and right (default: 0)
+#' @param annotate_nudge Scale how much annotation is moved left and right (default: 0)
 #' @param ORDER Autmomatically order the bars by length (default: TRUE)
 #'
 #' @return ggplot object
 #' @export
 #'
-#' @seealso \code{\link{s_analysis_to_tornado_plot_data}}
+#' @seealso \code{\link{create_tornado_data}}
 #' @examples
 #'
 #' library(magrittr)
@@ -54,29 +66,28 @@
 #' ggplot_tornado(dat, baseline_output)
 #'
 #' ## model ouput ##
-#' s_analysis <- data.frame(output = c(10,1,11,5,3),
-#'                          sens = c(2,2,3,0,2),
-#'                          spec = c(1,4,2,2,2))
+#' psa_dat <- data.frame(output = c(10,1,11,5,3),
+#'                       sens = c(2,2,3,0,2),
+#'                       spec = c(1,4,2,2,2))
 #'
-#' s_analysis <- model.frame(formula = output ~ sens + spec,
-#'                           data = s_analysis)
+#' psa_dat <- model.frame(formula = output ~ sens + spec,
+#'                        data = psa_dat)
 #'
-#' s_analysis %>%
-#'    s_analysis_to_tornado_plot_data %>%
+#' psa_dat %>%
+#'    create_tornado_data %>%
 #'    ggplot_tornado(baseline_output = 6)
 #'
-ggplot_tornado <- function(dat,
-                           baseline_output = NA,
-                           annotate_scale = 0,
-                           ORDER = TRUE){
+ggplot_tornado.tornado <- function(dat,
+                                   baseline_output = NA,
+                                   annotate_nudge = 0,
+                                   ORDER = TRUE) {
 
-  if (all(class(dat) != "tornado")) stop("Input data must be tornado class data frame.")
-  if (length(baseline_output) != 1) stop("Input baseline_output must be length one.")
+  output_name <- attr(xx, "output_name")
 
-  output_name <- attr(dat, "output_name")
+  if (length(baseline_output) != 1)
+    stop("Input baseline_output must be length one.")
 
   if (is.na(baseline_output)) {
-
     baseline_output <- attr(dat, "baseline")[output_name]
   }
 
@@ -85,9 +96,9 @@ ggplot_tornado <- function(dat,
   # don't strictly need this
   # order output columns as decending and ascending
   datplot <-
-    dat[ ,c(output_name, "baseline")] %>%
+    dat[, c(output_name, "baseline")] %>%
     dplyr::mutate("min" = apply(., 1, min),
-           "max" = apply(., 1, max)) %>%
+                  "max" = apply(., 1, max)) %>%
     dplyr::select(min, max)
 
   datplot <- cbind(dat, datplot)
@@ -96,19 +107,20 @@ ggplot_tornado <- function(dat,
   # order by length of bars
   ##TODO## assumes symmetrical; what about otherwise?
   if (ORDER) {
-
-    datplot$names = factor(as.character(datplot$names),
-                           levels = rev(unique(datplot$names[order(datplot$min, decreasing = FALSE)])))
+    datplot$names <-
+      factor(as.character(datplot$names),
+             levels = rev(unique(datplot$names[order(datplot$min, decreasing = FALSE)])))
   }
 
   # check if parameter values are provided
   if (all(NAMES %in% names(datplot))) {
     barLabels <- datplot[, NAMES] %>%
-                  OpenMx::diag2vec()
-  }else{barLabels <- ""}
+      OpenMx::diag2vec()
+  } else {barLabels <- ""}
 
   # shift annotation left or right
-  nudge <- (with(datplot, eval(parse(text = output_name)) > baseline) - 0.5) * annotate_scale
+  nudge <-
+    (with(datplot, eval(parse(text = output_name)) > baseline) - 0.5) * annotate_nudge
 
   ggplot2::ggplot(datplot,
                   aes(names, ymin = min, ymax = max, colour = val)) +
@@ -121,5 +133,9 @@ ggplot_tornado <- function(dat,
     theme(axis.text = element_text(size = 15),
           # legend.position = "none",
           legend.title = element_blank()) +
-    annotate("text", x = datplot$names, y = datplot[, output_name] + nudge, label = barLabels)
+    annotate("text",
+             x = datplot$names,
+             y = datplot[, output_name] + nudge,
+             label = barLabels)
 }
+

@@ -1,4 +1,4 @@
-context("test-s_analysis_to_tornado_plot_data.R")
+context("test-create_tornado_data.R")
 
 library(ggplot2)
 
@@ -11,7 +11,7 @@ test_that("", {
    s_analysis <- model.frame(formula = output ~ sens + spec,
                              data = s_analysis)
 
-   s_analysis_to_tornado_plot_data(s_analysis) %>%
+   create_tornado_data(s_analysis) %>%
      ggplot_tornado(baseline_output = 6)
 
 })
@@ -26,7 +26,7 @@ test_that("", {
                              data = s_analysis,
                              na.action = 'na.pass')
 
-   s_analysis_to_tornado_plot_data(s_analysis) %>%
+   create_tornado_data(s_analysis) %>%
      ggplot_tornado(baseline_output = 6)
 
 })
