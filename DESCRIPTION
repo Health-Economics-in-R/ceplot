@@ -18,7 +18,8 @@ Imports:
     dplyr,
     reshape2,
     magrittr,
-    OpenMx
+    OpenMx,
+    grid
 RoxygenNote: 7.1.2
 Suggests: 
     testthat

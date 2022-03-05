@@ -1,10 +1,10 @@
 
-#' A Simple Tornado Plot
+#' A Simple Tornado Plot in Base R
 #'
 #' Provide middle value and standard errors.
 #' Assumes symmetrical.
 #'
-#'https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/
+#' https://www.r-statistics.com/2010/07/visualization-of-regression-coefficients-in-r/
 #'
 #' @param cf Central values
 #' @param se Standard errors
