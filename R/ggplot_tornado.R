@@ -82,7 +82,7 @@ ggplot_tornado.tornado <- function(dat,
                                    annotate_nudge = 0,
                                    ORDER = TRUE) {
 
-  output_name <- attr(xx, "output_name")
+  output_name <- attr(dat, "output_name")
 
   if (length(baseline_output) != 1)
     stop("Input baseline_output must be length one.")
