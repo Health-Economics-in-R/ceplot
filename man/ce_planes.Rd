@@ -28,14 +28,28 @@ my_contour2_facet(dat, ...)
 \arguments{
 \item{...}{}
 
+\item{res_bcea}{res_bcea}
+
+\item{wtp}{wtp}
+
+\item{xlim}{xlim}
+
+\item{ylim}{ylim}
+
+\item{comparison}{comparison}
+
+\item{graph}{graph}
+
+\item{CONTOUR_PC}{CONTOUR_PC}
+
 \item{facet}{(TRUE/FALSE)}
 
 \item{dat}{List of class dectree output}
 }
 \value{
+plot
 
-
-
+plot
 }
 \description{
 Cost Effectiveness Planes
@@ -43,7 +57,4 @@ Cost Effectiveness Planes
 my_contour2
 
 my_contour2_facet
-}
-\examples{
-
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/basic_tornado_plot.R
 \name{tornado_plot}
 \alias{tornado_plot}
-\title{A Simple Tornado Plot}
+\title{A Simple Tornado Plot in Base R}
 \usage{
 tornado_plot(
   cf,
@@ -31,10 +31,42 @@ tornado_plot(
 
 \item{se}{Standard errors}
 
-\item{...}{}
+\item{df}{df}
+
+\item{level}{level}
+
+\item{parm}{parm}
+
+\item{labels}{labels}
+
+\item{xlab}{xlab}
+
+\item{ylab}{ylab}
+
+\item{xlim}{xlim}
+
+\item{ylim}{ylim}
+
+\item{las}{las}
+
+\item{lwd}{lwd}
+
+\item{lty}{lty}
+
+\item{pch}{pch}
+
+\item{col}{col}
+
+\item{length}{length}
+
+\item{angle}{angle}
+
+\item{code}{code}
+
+\item{...}{...}
 }
 \value{
-
+plot
 }
 \description{
 Provide middle value and standard errors.

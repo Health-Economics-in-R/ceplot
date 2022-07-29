@@ -8,25 +8,25 @@
 #'
 #' @param cf Central values
 #' @param se Standard errors
-#' @param df
-#' @param level
-#' @param parm
-#' @param labels
-#' @param xlab
-#' @param ylab
-#' @param xlim
-#' @param ylim
-#' @param las
-#' @param lwd
-#' @param lty
-#' @param pch
-#' @param col
-#' @param length
-#' @param angle
-#' @param code
-#' @param ...
+#' @param df df
+#' @param level level
+#' @param parm parm
+#' @param labels labels
+#' @param xlab xlab
+#' @param ylab ylab
+#' @param xlim xlim
+#' @param ylim ylim
+#' @param las las
+#' @param lwd lwd
+#' @param lty lty
+#' @param pch pch
+#' @param col col
+#' @param length length
+#' @param angle angle
+#' @param code code
+#' @param ... ...
 #'
-#' @return
+#' @return plot
 #' @export
 #'
 #' @examples

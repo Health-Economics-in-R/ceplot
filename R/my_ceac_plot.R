@@ -10,10 +10,8 @@
 #' @param new_window default: FALSE
 #' @param scenario Specific scenario numbers to plot. default: NA
 #'
-#' @return
+#' @return plot
 #' @export
-#'
-#' @examples
 #'
 my_ceac.plot <- function(screen.bcea,
                          new_window = FALSE,

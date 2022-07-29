@@ -1,21 +1,20 @@
 
 #' my_contour2
 #'
-#' @param res_bcea
-#' @param wtp
-#' @param xlim
-#' @param ylim
-#' @param comparison
-#' @param graph
-#' @param CONTOUR_PC
+#' @param res_bcea res_bcea
+#' @param wtp wtp
+#' @param xlim xlim
+#' @param ylim ylim
+#' @param comparison comparison
+#' @param graph graph
+#' @param CONTOUR_PC CONTOUR_PC
 #' @param facet (TRUE/FALSE)
 #' @param ...
 #'
 #' @rdname ce_planes
-#' @return
+#' @return plot
 #' @export
 #'
-#' @examples
 my_contour2 <- function(...) UseMethod('my_contour2')
 
 

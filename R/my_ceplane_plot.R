@@ -1,20 +1,19 @@
 #' my_ceplane.plot
 #'
-#' @param he
-#' @param comparison
-#' @param wtp
-#' @param pos
-#' @param size
-#' @param graph
-#' @param xlim
-#' @param ylim
-#' @param withpoints
-#' @param ...
+#' @param he he
+#' @param comparison comparison
+#' @param wtp wtp
+#' @param pos pos
+#' @param size size
+#' @param graph graph
+#' @param xlim xlim
+#' @param ylim ylim
+#' @param withpoints withpoints
+#' @param ... ...
 #'
-#' @return
+#' @return plot
 #' @export
 #'
-#' @examples
 my_ceplane.plot <- function(he,
                             comparison = NULL,
                             wtp = 25000,
