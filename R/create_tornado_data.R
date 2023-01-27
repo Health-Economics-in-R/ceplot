@@ -63,7 +63,7 @@ create_tornado_data <- function(psa_dat,
   # use an average
   # assuming using each parameter average exist as a scenario
   ##TODO: when median is half way match(TRUE, round(0.05, 1:20) == x)
-  if (is.na(baseline_input)) {
+  if (any(is.na(baseline_input))) {
     baseline_input <- apply(design_matrix, 2, function(x) median(x))
 
     # maintain ordering

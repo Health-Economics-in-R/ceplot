@@ -1,5 +1,11 @@
 
-#' ggplot tornado
+#' @name ggplot_tornado
+#' @title ggplot tornado
+#'
+#' @description Create a tornado plot for a cost-effectiveness one-way sensitivity analysis.
+#' Supply the parameter names and maximum and minimum values for an output
+#' statistic of interest e.g. ICER or INMB.
+#' These need to be calculated before hand and in correct format (see \code{create_tornado_data}).
 #'
 #' @param dat Data
 #' @param ... Additional arguments
@@ -18,14 +24,7 @@ ggplot_tornado.default <- function(dat, ...) {
 }
 
 
-
-#' Tornado Plot
 #' @rdname ggplot_tornado
-#'
-#' Create a tornado plot for a cost-effectiveness one-way sensitivity analysis.
-#' Supply the parameter names and maximum and minimum values for an output
-#' statistic of interest e.g. ICER or INMB.
-#' These need to be calculated before hand and in correct format (see \code{create_tornado_data}).
 #'
 #' @param dat Data frame of output maximum and minimum values. Format should be
 #' \tabular{rrr}{
@@ -39,7 +38,7 @@ ggplot_tornado.default <- function(dat, ...) {
 #' @param baseline_output Values of output for baseline input parameter values to
 #'    compare maximum and minimum against (default: NA)
 #' @param annotate_nudge Scale how much annotation is moved left and right (default: 0)
-#' @param ORDER Autmomatically order the bars by length (default: TRUE)
+#' @param ORDER Automatically order the bars by length (default: TRUE)
 #'
 #' @return ggplot object
 #' @export

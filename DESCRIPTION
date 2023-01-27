@@ -20,6 +20,6 @@ Imports:
     magrittr,
     OpenMx,
     grid
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Suggests: 
     testthat
